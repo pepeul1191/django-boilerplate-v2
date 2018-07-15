@@ -1,2 +1,4 @@
 Django==1.8.7
 Jinja2
+gunicorn
+dj-static
