@@ -16,7 +16,17 @@ def handler404(request):
         'Error 404'
       ],
     }
-    return HttpResponse(json.dumps(error), status=404)
+    return HttpResponse(json.dumps(error), status = 404)
+
+def methodNotAllow():
+  error = {
+    'tipo_mensaje': 'error',
+    'mensaje': [
+      'Recurso no disponible',
+      'methodNotAllow Error'
+    ],
+  }
+  return json.dumps(error)
 
 
 def access(request, numero):
@@ -39,4 +49,4 @@ def access(request, numero):
     'jss': access_js(),
     'error': errores[str(numero)]
   }
-  return render(request, 'error/access.html', locals, status=404)
+  return render(request, 'error/access.html', locals, status = 404)

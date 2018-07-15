@@ -1,6 +1,7 @@
 constants = {
   'base_url' : 'http://localhost:8080/',
   'static_url' : 'http://localhost:9090/',
+  'sistema_id': '4',
   'csrf' : {
     'key': 'csrfmiddlewaretoken',
     'secret': '4n5)f$(xj7lxneya=2a=p9w!-jf(vwt0i3sge)#gh16&h&c+&7'
@@ -11,7 +12,7 @@ constants = {
   'key' : 'Fdp6CVxpri1ga8kH',
   'servicios' : {
     'accesos' : {
-      'url': 'http://localhost:5000/',
+      'url': 'http://localhost:4000/',
       'key': 'csrf_val',
       'secret': 'PKBcauXg6sTXz7Ddlty0nejVgoUodXL89KNxcrfwkEme0Huqtj6jjt4fP7v2uF4L',
     },

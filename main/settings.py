@@ -40,6 +40,7 @@ INSTALLED_APPS = (
   'dj_static',
   'login',
   'error',
+  'home',
 )
 
 MIDDLEWARE_CLASSES = (

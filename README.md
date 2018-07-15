@@ -34,3 +34,5 @@ Fuentes:
 + https://vxlabs.com/2015/12/08/gunicorn-as-your-django-development-server/
 + http://docs.python-requests.org/en/master/user/quickstart/#custom-headers
 + https://micropyramid.com/blog/handling-custom-error-pages-in-django/
++ https://stackoverflow.com/questions/16458166/how-to-disable-djangos-csrf-validation
++ http://docs.python-requests.org/en/master/user/quickstart/#custom-headers
