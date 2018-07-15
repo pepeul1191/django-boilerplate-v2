@@ -36,3 +36,5 @@ Fuentes:
 + https://micropyramid.com/blog/handling-custom-error-pages-in-django/
 + https://stackoverflow.com/questions/16458166/how-to-disable-djangos-csrf-validation
 + http://docs.python-requests.org/en/master/user/quickstart/#custom-headers
++ https://docs.djangoproject.com/en/2.0/topics/http/sessions/
++ https://stackoverflow.com/questions/30342299/where-does-django-store-sessions

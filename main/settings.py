@@ -55,6 +55,8 @@ MIDDLEWARE_CLASSES = (
   'main.middlewares.BeforeAll',
 )
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
 ROOT_URLCONF = 'main.urls'
 
 TEMPLATES = [

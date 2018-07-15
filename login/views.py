@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import requests
+import datetime
+import json
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from requests.exceptions import ConnectionError
@@ -88,7 +90,10 @@ def acceder(request):
             continuar = False
             mensaje = 'Usuario y/o contraseña no coincide'
           else:
-            # TODO, habilitar la session
+            # habilitar session
+            request.session['usuario'] = usuario
+            request.session['estado'] = 'activo'
+            request.session['momento'] = str(datetime.datetime.now())
             return redirect(constants['base_url'])
         else:
           continuar = False
@@ -122,5 +127,35 @@ def acceder(request):
       'jss': index_js(),
     }
     return render(request, 'login/index.html', locals, status = 500)
+  else:
+    return HttpResponse(methodNotAllow(), status = 500)
+
+def ver(request):
+  if request.method == 'GET':
+    rpta = ''
+    status = 200
+    try:
+      rpta = {
+        'usuario': request.session['usuario'],
+        'estado': request.session['estado'],
+        'momento': request.session['momento'],
+      }
+    except Exception as e:
+      status = 500
+      rpta = {
+        'tipo_mensaje': 'error',
+        'mensaje': [
+          'Se ha producido un error en obtener los datos de sesión del usuario',
+          'Una o más de la variables de la sesión no están seteadas'
+        ],
+      }
+    return HttpResponse(json.dumps(rpta), status = status)
+  else:
+    return HttpResponse(methodNotAllow(), status = 500)
+
+def salir(request):
+  if request.method == 'GET':
+    request.session.clear()
+    return redirect(constants['base_url'] + 'login')
   else:
     return HttpResponse(methodNotAllow(), status = 500)
