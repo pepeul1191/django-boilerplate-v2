@@ -6,6 +6,10 @@ Comandos de DJango
     $ python manage.py runserver localhost:8080
     $ python manage.py runserver
 
+Ejecuar DJango con acceso a static con error404:
+
+    $  python manage.py runserver localhost:8080 --insecure
+
 Ejecutar aplicación con Green Unicorn:
 
     $ gunicorn --env DJANGO_SETTINGS_MODULE=main.settings main.wsgi -b :8080 -w 6 -b 0.0.0.0 --reload --access-logfile -

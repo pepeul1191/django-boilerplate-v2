@@ -1,13 +1,13 @@
 {% extends 'layouts/blank.html' %}
 {% block content %}
 <div class="row text-center">
-  <h1 class="align-text-bottom"><?php echo $error['numero']; ?></h1>
+  <h1 class="align-text-bottom">{{error['numero']}}</h1>
 </div>
 <div class="row text-center">
 	<div class="error-divider">
-		<h2><?php echo $error['mensaje']; ?></h2>
-		<p class="description"><?php echo $error['descripcion']; ?></p>
+		<h2>{{error['mensaje']}}</h2>
+		<p class="description">{{error['descripcion']}}</p>
 	</div>
-	<a href="<?php echo $constants['base_url']; ?>login" class="return-btn"><i class="fa fa-home"></i>Ir al Inicio</a>
+	<a href="{{constants['base_url']}}login" class="return-btn"><i class="fa fa-home"></i>Ir al Inicio</a>
 </div>
 {% endblock %}
