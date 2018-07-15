@@ -61,7 +61,7 @@ TEMPLATES = [
     'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
     'APP_DIRS': True,
     'OPTIONS': {
-      'environment': 'main.jinja2.environment'
+      'environment': 'main.templates.environment'
     },
   },
   {
