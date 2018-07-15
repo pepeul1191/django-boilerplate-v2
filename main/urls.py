@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 
+handler404 = 'error.views.handler404'
+
 urlpatterns = [
   url(r'^login', include('login.urls')),
+  url(r'^error', include('error.urls')),
 ]
