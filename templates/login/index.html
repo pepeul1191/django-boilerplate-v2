@@ -3,12 +3,12 @@
 <div class="login-page">
   <div class="form">
     <i class="fa fa-map-marker" aria-hidden="true" id="logo-brand"></i>
-    <form class="login-form" action="<?php echo $this->config->item('base_url'); ?>login/acceder" method="post">
+    <form class="login-form" action="{{constants['base_url']}}login/acceder" method="post">
       <input type="text" placeholder="usuario" name="usuario"/>
       <input type="password" placeholder="contrasenia" name="contrasenia"/>
-      <input type="hidden" name="<?php echo $this->config->item('csrf_token_name');?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+      <input type="hidden" name="{{constants['csrf']['key']}}" value="{{constants['csrf']['secret']}}">
       <button type="submit">login</button>
-      <p class="mensaje-error"><?php echo $mensaje; ?></p>
+      <p class="mensaje-error">{{mensaje}}</p>
       <p class="message">No está registrado? <a href="#" onclick="crearCuenta()">Crear cuenta</a></p>
     </form>
   </div>

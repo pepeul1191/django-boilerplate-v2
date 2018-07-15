@@ -6,7 +6,7 @@ from login.helpers import index_css, index_js
 def index(request):
   locals = {
     'title': 'Login',
-    'saludo': 'hola mundo',
+    'mensaje': '',
     'csss': index_css(),
     'jss': index_js(),
   }
