@@ -5,10 +5,11 @@
 	<title>{{title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="{{constants['static_url']}}favicon.ico">
+  {{load_css(csss)|safe}}
 </head>
 <body>
   <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
-  {{constants['base_url']}}
 	{% block content %}{% endblock %}
+  {{load_js(jss)|safe}}
 </body>
 </html>
