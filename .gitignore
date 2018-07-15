@@ -5,3 +5,5 @@ package-lock.json
 static/dist/
 .DS_Store
 db.sqlite3
+package-lock.json
+node_modules

@@ -1,6 +1,6 @@
 constants = {
   'base_url' : 'http://localhost:8080/',
-  'static_url' : 'http://localhost:8080/static/',
+  'static_url' : 'http://localhost:9090/',
   'csrf' : {
     'key': 'csrfmiddlewaretoken',
     'secret': '4n5)f$(xj7lxneya=2a=p9w!-jf(vwt0i3sge)#gh16&h&c+&7'

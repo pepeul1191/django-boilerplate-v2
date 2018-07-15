@@ -14,6 +14,11 @@ Ejecutar aplicación con Green Unicorn:
 
     $ gunicorn --env DJANGO_SETTINGS_MODULE=main.settings main.wsgi -b :8080 -w 6 -b 0.0.0.0 --reload --access-logfile -
 
+Arrancar servidor de archivos estáticos ExpressJS:
+
+    $ npm install
+    $ npm start
+
 ---
 
 Fuentes:
