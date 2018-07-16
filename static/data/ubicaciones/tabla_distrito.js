@@ -32,6 +32,7 @@ var dataTablaDistrito = {
       estilos: "padding-left: 15px;",
     },
   ],
+  tableKeys: ['id', 'nombre'],
   collection: new ProvinciasCollection(),
   model: "Provincia",
 };

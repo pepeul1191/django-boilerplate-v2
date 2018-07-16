@@ -38,6 +38,7 @@ var dataTablaProvincia = {
       estilos: "padding-left: 10px;",
     },
   ],
+  tableKeys: ['id', 'nombre'],
   collection: new ProvinciasCollection(),
   model: "Provincia",
 }

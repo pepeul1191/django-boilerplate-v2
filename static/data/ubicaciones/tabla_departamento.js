@@ -38,6 +38,7 @@ var dataTablaDepartamento = {
       estilos: "padding-left: 10px;",
     },
   ],
+  tableKeys: ['id', 'nombre'],
   collection: new DepartamentosCollection(),
   model: "Departamento",
 };
