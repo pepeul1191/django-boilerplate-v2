@@ -14,7 +14,7 @@ from error.views import methodNotAllow
 @check_csrf
 def listar(request):
   if request.method == 'GET':
-    rpta = None
+    rpta = Nones
     status = 200
     try:
       conn = engine_ubicaciones.connect()

@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 
 handler404 = 'error.views.handler404'
+handler500 = 'error.views.handler500'
 
 urlpatterns = [
   url(r'^login', include('login.urls')),

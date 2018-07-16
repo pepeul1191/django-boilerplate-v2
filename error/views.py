@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
+import sys
+import traceback
 from django.shortcuts import render, redirect
 from .helpers import access_css, access_js
 from django.http import HttpResponse
@@ -17,6 +19,26 @@ def handler404(request):
       ],
     }
     return HttpResponse(json.dumps(error), status = 404)
+
+def handler500(request):
+  type, value, tb = sys.exc_info()
+  mensaje = ''
+  mensajes = traceback.format_exception(type, value, tb)
+  if constants['ambiente_500'] == 'activo':
+    mensaje = 'Ups, ocurrió un error'
+  else:
+    mensaje = mensajes
+  print('ERORR!!!')
+  for stack in mensajes:
+    print(stack)
+  error = {
+    'tipo_mensaje': 'error',
+    'mensaje': [
+      mensaje,
+      'Error 500'
+    ],
+  }
+  return HttpResponse(json.dumps(error), status = 500)
 
 def methodNotAllow():
   error = {
