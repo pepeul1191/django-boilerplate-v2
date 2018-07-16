@@ -25,7 +25,7 @@ def listar(request, departamento_id):
       rpta = {
         'tipo_mensaje': 'error',
         'mensaje': [
-          'Se ha producido un error en listar los departamentos',
+          'Se ha producido un error en listar las provincias del departamento',
           str(e)
         ],
       }
@@ -35,6 +35,7 @@ def listar(request, departamento_id):
     return HttpResponse(methodNotAllow(), status = 500)
 
 @csrf_exempt
+@check_csrf
 def guardar(request):
   if request.method == 'POST':
     status = 200

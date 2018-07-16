@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from sqlalchemy.sql import select
 from main.databases import engine_ubicaciones, session_ubicaciones
-from .models import Distrito
+from .models import Distrito, VWDistritoProvinciaDepartamento as VW
 from main.decorators import check_csrf
 from error.views import methodNotAllow
 
@@ -25,7 +25,7 @@ def listar(request, provincia_id):
       rpta = {
         'tipo_mensaje': 'error',
         'mensaje': [
-          'Se ha producido un error en listar los departamentos',
+          'Se ha producido un error en listar los distritos de la provincia',
           str(e)
         ],
       }
@@ -35,6 +35,7 @@ def listar(request, provincia_id):
     return HttpResponse(methodNotAllow(), status = 500)
 
 @csrf_exempt
+@check_csrf
 def guardar(request):
   if request.method == 'POST':
     status = 200
@@ -84,6 +85,56 @@ def guardar(request):
           str(e)
         ]
       }
+    return HttpResponse(json.dumps(rpta), status = status,)
+  else:
+    return HttpResponse(methodNotAllow(), status = 500)
+
+@csrf_exempt
+@check_csrf
+def buscar(request):
+  if request.method == 'GET':
+    rpta = None
+    status = 200
+    try:
+      nombre = request.GET.get('nombre')
+      conn = engine_ubicaciones.connect()
+      stmt = select([VW]).where(VW.nombre.like(nombre + '%' )).limit(10)
+      rs = conn.execute(stmt)
+      rpta = [dict(r) for r in conn.execute(stmt)]
+    except Exception as e:
+      rpta = {
+        'tipo_mensaje': 'error',
+        'mensaje': [
+          'Se ha producido un error en buscar las coincidenciasd de los nombres de distritos',
+          str(e)
+        ],
+      }
+      status = 500
+    return HttpResponse(json.dumps(rpta), status = status,)
+  else:
+    return HttpResponse(methodNotAllow(), status = 500)
+
+@csrf_exempt
+@check_csrf
+def nombre(request, distrito_id):
+  if request.method == 'GET':
+    rpta = None
+    status = 200
+    try:
+      session = session_ubicaciones()
+      conn = engine_ubicaciones.connect()
+      distrito = session.query(VW).filter_by(id = distrito_id).first()
+      rpta = distrito.nombre
+      session.commit()
+    except Exception as e:
+      rpta = {
+        'tipo_mensaje': 'error',
+        'mensaje': [
+          'Se ha producido un error en buscar en nombre del distrito',
+          str(e)
+        ],
+      }
+      status = 500
     return HttpResponse(json.dumps(rpta), status = status,)
   else:
     return HttpResponse(methodNotAllow(), status = 500)

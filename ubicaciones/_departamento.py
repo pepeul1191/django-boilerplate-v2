@@ -35,6 +35,7 @@ def listar(request):
     return HttpResponse(methodNotAllow(), status = 500)
 
 @csrf_exempt
+@check_csrf
 def guardar(request):
   if request.method == 'POST':
     status = 200
