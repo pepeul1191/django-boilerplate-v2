@@ -21,7 +21,7 @@ Arrancar servidor de archivos estáticos ExpressJS:
 
 Migraciones con DBMATE:
 
-    $ dbmate -d "db/migrations" new <<nombre_de_migracion>>
+    $ dbmate -d "db/migrations" -e "DATABASE_URL" new <<nombre_de_migracion>>
     $ dbmate -d "ubicaciones/migrations" up
 
 ---
