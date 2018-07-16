@@ -1,5 +1,6 @@
 import json
 from django.http import HttpResponse
+from django.shortcuts import redirect
 from main.constants import constants
 
 def enable_cors(fn):

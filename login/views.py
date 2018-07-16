@@ -9,7 +9,9 @@ from django.views.decorators.csrf import csrf_exempt
 from error.views import methodNotAllow
 from .helpers import index_css, index_js
 from main.constants import constants
+from main.decorators import session_false
 
+@session_false
 def index(request):
   if request.method == 'GET':
     locals = {
@@ -92,7 +94,7 @@ def acceder(request):
           else:
             # habilitar session
             request.session['usuario'] = usuario
-            request.session['estado'] = 'activo'
+            request.session['activo'] = True
             request.session['momento'] = str(datetime.datetime.now())
             return redirect(constants['base_url'])
         else:

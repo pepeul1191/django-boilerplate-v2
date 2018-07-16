@@ -6,7 +6,9 @@ from django.http import HttpResponse
 from error.views import methodNotAllow
 from .helpers import index_css, index_js
 from main.constants import constants
+from main.decorators import session_true
 
+@session_true
 def index(request):
   if request.method == 'GET':
     locals = {
