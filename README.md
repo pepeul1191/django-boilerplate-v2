@@ -1,3 +1,5 @@
+# DJango Boilerplate
+
 Comandos de DJango
 
     $ python manage.py startapp polls
@@ -23,6 +25,17 @@ Migraciones con DBMATE:
 
     $ dbmate -d "db/migrations" -e "DATABASE_URL" new <<nombre_de_migracion>>
     $ dbmate -d "ubicaciones/migrations" up
+
+#### Ejecutar Prueba de Carga JMeter
+
+Ejecutar prueba de carga JMeter cambiar en 'main/constants.py'
+
+    'ambiente_session' : 'activo', ->  : 'inactivo',
+    'ambiente_csrf' : 'activo', ->  : 'inactivo',
+
+Adicionalmente al arrancar la aplicación usar el siguiente comando:
+
+    $ gunicorn --env DJANGO_SETTINGS_MODULE=main.settings main.wsgi -b :8080 -w 100 -b 0.0.0.0
 
 ---
 
