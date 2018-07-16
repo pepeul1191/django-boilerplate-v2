@@ -37,6 +37,10 @@ Adicionalmente al arrancar la aplicación usar el siguiente comando:
 
     $ gunicorn --env DJANGO_SETTINGS_MODULE=main.settings main.wsgi -b :8080 -w 100 -b 0.0.0.0
 
+### Pruebas con Cucumber
+
+    $ cucumber features/listar_departamentos.feature
+
 ---
 
 Fuentes:
