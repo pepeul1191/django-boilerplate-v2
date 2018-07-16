@@ -7,9 +7,11 @@ from django.views.decorators.csrf import csrf_exempt
 from sqlalchemy.sql import select
 from main.databases import engine_ubicaciones, session_ubicaciones
 from .models import Departamento
+from main.decorators import check_csrf
 from error.views import methodNotAllow
 
 @csrf_exempt
+@check_csrf
 def listar(request):
   if request.method == 'GET':
     rpta = None

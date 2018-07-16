@@ -4,7 +4,7 @@ constants = {
   'sistema_id': '4',
   'csrf' : {
     'key': 'csrfmiddlewaretoken',
-    'secret': '4n5)f$(xj7lxneya=2a=p9w!-jf(vwt0i3sge)#gh16&h&c+&7'
+    'secret': 'holamundojejejojo18927389127389123'
   },
   'ambiente_static' : 'desarrollo',
   'ambiente_session' : 'activo',
