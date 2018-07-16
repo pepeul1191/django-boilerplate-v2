@@ -43,9 +43,6 @@ def guardar(request):
     editados = data['editados']
     eliminados = data['eliminados']
     departamento_id = data['extra']['departamento_id']
-    print("1 +++++++++++++++++++++++++++++++++")
-    print(departamento_id)
-    print("2 +++++++++++++++++++++++++++++++++")
     array_nuevos = []
     rpta = None
     session = session_ubicaciones()
