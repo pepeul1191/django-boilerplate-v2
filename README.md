@@ -19,6 +19,10 @@ Arrancar servidor de archivos estáticos ExpressJS:
     $ npm install
     $ npm start
 
+Migraciones con DBMATE:
+
+    $ dbmate up
+
 ---
 
 Fuentes:
