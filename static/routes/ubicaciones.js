@@ -19,7 +19,7 @@ var ubicacionesRouter = Backbone.Router.extend({
     this.ubicacicionView.tablaDepartamento.listar();
   },
   default: function() {
-    window.location.href = BASE_URL + "#/error/404";
+    //window.location.href = BASE_URL + "#/error/404";
   },
 });
 

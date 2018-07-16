@@ -23,8 +23,8 @@ def index(request):
       'items' : json.dumps([
     	{"subtitulo":"Opciones", "items":
     	  [
-    		{"item":"Gestión de Sistemas","url":"accesos/#/sistema"},
-    		{"item":"Gestión de Usuarios","url":"accesos/#/usuario"}
+    		{"item":"Gestión de Sistemas","url":"#/sistema"},
+    		{"item":"Gestión de Usuarios","url":"#/usuario"}
     	  ]
     	},
       ]),

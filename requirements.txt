@@ -4,3 +4,4 @@ gunicorn
 dj-static
 requests
 WhiteNoise
+SQLAlchemy

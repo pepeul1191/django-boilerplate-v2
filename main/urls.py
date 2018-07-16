@@ -20,5 +20,6 @@ handler404 = 'error.views.handler404'
 urlpatterns = [
   url(r'^login', include('login.urls')),
   url(r'^error', include('error.urls')),
+  url(r'^ubicaciones', include('ubicaciones.urls')),
   url(r'^', include('home.urls')),
 ]
