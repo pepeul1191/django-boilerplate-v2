@@ -12,7 +12,7 @@ var TablaProvinciaView = TableView.extend({
   },
   verDistrito: function(event, tablaDistrito){
     var provinciaId = event.target.parentElement.parentElement.firstChild.innerHTML;
-    tablaDistrito.urlListar = BASE_URL + "distrito/listar/" + provinciaId;
+    tablaDistrito.urlListar = BASE_URL + "ubicaciones/distrito/listar/" + provinciaId;
     tablaDistrito.limpiarBody();
     tablaDistrito.listar();
     tablaDistrito.extraData = {provincia_id: provinciaId};

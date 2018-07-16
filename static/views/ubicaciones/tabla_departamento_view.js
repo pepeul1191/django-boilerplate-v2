@@ -13,7 +13,7 @@ var TablaDepatartamentoView = TableView.extend({
   verProvincias: function(event, tablaProvincia, tablaDistrito){
     var departamentoId = event.target.parentElement.parentElement.firstChild.innerHTML;
     //urlListar: BASE_URL + "provincia/listar/" + departamentoId,
-    tablaProvincia.urlListar = BASE_URL + "provincia/listar/" + departamentoId;
+    tablaProvincia.urlListar = BASE_URL + "ubicaciones/provincia/listar/" + departamentoId;
     document.getElementById("formTableProvincia").classList.remove("oculto");
     tablaProvincia.limpiarBody();
     tablaProvincia.listar();

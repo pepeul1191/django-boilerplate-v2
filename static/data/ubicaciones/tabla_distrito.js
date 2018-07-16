@@ -8,7 +8,7 @@ var dataTablaDistrito = {
     success: "Se cargado guardo los cambios en las provincas",
   },
   //urlListar: BASE_URL + "distrito/listar/" + provinciaId,
-  urlGuardar: BASE_URL + "distrito/guardar",
+  urlGuardar: BASE_URL + "ubicaciones/distrito/guardar",
   fila: {
     id: { // llave de REST
       tipo: "td_id",

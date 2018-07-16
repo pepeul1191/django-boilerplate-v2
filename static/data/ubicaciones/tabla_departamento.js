@@ -7,8 +7,8 @@ var dataTablaDepartamento = {
     errorGuardarAjax: "Error en guardar los datos en el servidor",
     success: "Se cargado guardo los cambios en los departamentos",
   },
-  urlListar: BASE_URL + "departamento/listar",
-  urlGuardar: BASE_URL + "departamento/guardar",
+  urlListar: BASE_URL + "ubicaciones/departamento/listar",
+  urlGuardar: BASE_URL + "ubicaciones/departamento/guardar",
   fila: {
     id: { // llave de REST
       tipo: "td_id",
