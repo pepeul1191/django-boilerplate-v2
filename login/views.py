@@ -139,7 +139,7 @@ def ver(request):
     try:
       rpta = {
         'usuario': request.session['usuario'],
-        'estado': request.session['estado'],
+        'activo': request.session['activo'],
         'momento': request.session['momento'],
       }
     except Exception as e:

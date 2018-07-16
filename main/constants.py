@@ -8,7 +8,7 @@ constants = {
   },
   'ambiente_static' : 'desarrollo',
   'ambiente_session' : 'activo',
-  'ambiente_csrf' : 'inactivo',
+  'ambiente_csrf' : 'activo',
   'key' : 'Fdp6CVxpri1ga8kH',
   'servicios' : {
     'accesos' : {
