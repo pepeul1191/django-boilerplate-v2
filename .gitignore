@@ -7,3 +7,4 @@ static/dist/
 db.sqlite3
 package-lock.json
 node_modules
+db/ubicaciones.db

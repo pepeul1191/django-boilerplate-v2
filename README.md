@@ -44,3 +44,4 @@ Fuentes:
 + https://stackoverflow.com/questions/30342299/where-does-django-store-sessions
 + https://simpleisbetterthancomplex.com/2015/12/07/working-with-django-view-decorators.html
 + https://stackoverflow.com/questions/14377050/custom-http-header-in-django
++ https://dbmate.readthedocs.io/en/latest/

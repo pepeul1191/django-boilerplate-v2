@@ -78,7 +78,7 @@ def guardar(request):
       rpta = {
         'tipo_mensaje' : 'error',
         'mensaje' : [
-          'Se ha producido un error en guardar los items del subtítulo',
+          'Se ha producido un error en guardar los departamentos',
           str(e)
         ]
       }
